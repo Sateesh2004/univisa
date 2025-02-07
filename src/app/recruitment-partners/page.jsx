@@ -6,6 +6,7 @@ import React from 'react'
 import Navbar from '@/components/NavBar';
 
 import WaveText from '@/components/WaveText';
+import Universities from '@/components/Universities';
 
 const page = () => {
   return (
@@ -26,12 +27,32 @@ const page = () => {
         </div>
       </section>
     </div>
-  <div className=' flex justify-between px-10 py-10  bg-black '>
-    <div className='bg-white w-[33%]'></div>
-    <div className='bg-white w-[33%]'></div>
-    <div className='bg-white w-[33%]'></div>
+  <div className=' flex flex-col justify-between text-2xl text-center px-24 gap-24 py-10  bg-black '>
+  <div className='text-white font-bold text-3xl'>Why UniViza</div>
+    <div className='flex  justify-between '>
+    <div className='bg-white text-2xl w-[33%] py-10'>
+      <img src="/Communication-2.svg"  className='m-auto mb-10 block' alt="1" />
+      <p >Choose From</p>
+      <p>Top Institutions </p>
+      <p>Worldwide</p>
+    </div>
+    <div className='bg-white w-[33%] py-10'>
+      <img src="/Communication-2.svg" className='m-auto mb-10 block' alt="2" />
+    <p >Higher Commission</p>
+    <p >Rates</p>
+    </div>
+    <div className='bg-white w-[33%] py-10'>
+      <img src="/Communication-2.svg" className='m-auto mb-10 block' alt="3" />
+           <p>Complete Support</p>
+           <p>From Application</p>
+           <p>to Visa</p>
+    </div>
 
   </div>
+  </div>
+  
+
+  <Universities/>
   <Footer/>
   </>
   )

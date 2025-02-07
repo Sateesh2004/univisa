@@ -2,8 +2,10 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -20,16 +22,17 @@ export default function Navbar() {
           <Link href="/">     <img src="/newLogo.png" className="w-48" alt="Logo"/></Link>
      
         </div>
-
         <div className="hidden text-xl font-bold items-center tracking-[1px] md:flex space-x-8">
-          <Link href="#countries" className="   hover:text-blue-600 text-black transition-colors duration-300">Countries</Link>
-          <Link href="/students" className=" hover:text-blue-600 text-black transition-colors duration-300">Students</Link>
-          <Link href="/recruitment-partners" className=" hover:text-blue-600 text-black transition-colors duration-300">Recruitment Partners</Link>
-          <Link href="/institutions" className=" hover:text-blue-600 text-black transition-colors duration-300">Institutions</Link>
-          <Link href="/contact" className=" hover:text-black text-white  transition-colors duration-300"><button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text- shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white border-2 border-black before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56">
-      <span className="relative z-10">Contact</span>
-    </button></Link>
-        </div>
+    <Link href="#countries" className="hover:border-b-4 hover:text-[#471ace] text-black transition-colors duration-300">Countries</Link>
+    <Link href="/students" className={`hover:text-[#1a48ce] hover:border-b-4 border-[#4627e3] ${pathName === '/students' ? 'text-[#1a48ce] border-b-4 border-[#1a48ce]' : ''} text-black transition-colors duration-300`}>Students</Link>
+    <Link href="/recruitment-partners" className={`hover:text-[#1a48ce] hover:border-b-4 border-[#1a48ce] ${pathName === '/recruitment-partners' ? 'text-[#1a48ce] border-b-4 border-[#1a48ce]' : ''} text-black transition-colors duration-300`}>Recruitment Partners</Link>
+    <Link href="/institutions" className={`hover:text-[#1a48ce] hover:border-b-4 border-[#1a48ce] ${pathName === '/institutions' ? 'text-[#1a48ce] border-b-4 border-[#1a48ce]' : ''} text-black transition-colors duration-300`}>Institutions</Link>
+    <Link href="/contact" className="hover:text-black text-white transition-colors duration-300">
+        <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white border-2 border-black before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56">
+            <span className="relative z-10">Contact</span>
+        </button>
+    </Link>
+</div>
 
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 hover:text-blue-600 transition-colors duration-300">

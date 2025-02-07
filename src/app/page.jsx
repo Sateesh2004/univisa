@@ -7,6 +7,7 @@ import Navbar from '@/components/NavBar';
 
 import WaveText from '@/components/WaveText';
 import Universities from '@/components/Universities';
+import ImageSwitcher from '@/components/ImageSwitcher';
 
 const page = () => {
   return (
@@ -26,6 +27,7 @@ const page = () => {
         </div>
       </section>
     </div>
+    <ImageSwitcher/>
   <Universities/>
   <Footer/>
   </>
