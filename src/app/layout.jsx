@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        <NextTopLoader
+        {/* <NextTopLoader
          showSpinner={false}
         color="#1a48ce"
         
-        />
+        /> */}
         {/* <NavBar/> */}
         {children}
        {/* <Footer/> */}

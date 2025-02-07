@@ -2,8 +2,8 @@
 export default function Universities() {
     const destinations = [
       {
-        country: "Canada",
-        image: "/u1.png",
+        country: "USA",
+        image: "/countries/USA.png",
         flag: "🇨🇦",
       },
       {

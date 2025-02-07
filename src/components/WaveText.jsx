@@ -8,9 +8,9 @@ const WaveText = (prop) => {
   return (
     <span className="wave-text">
       {text.split('').map((char, index) => (
-        <span
+        <span 
           key={index}
-          className="wave-letter text-white"
+          className={`wave-letter ${char=="g"?"pb-2":""}  text-white`}
           style={{
             animationDelay: `${delay + index * 20}ms`,
           }}
