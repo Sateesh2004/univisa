@@ -29,7 +29,7 @@ export default function Navbar() {
     <Link href="/institutions" className={`hover:text-[#1a48ce] hover:border-b-4 border-[#1a48ce] ${pathName === '/institutions' ? 'text-[#1a48ce] border-b-4 border-[#1a48ce]' : ''} text-black transition-colors duration-300`}>Institutions</Link>
     <Link href="/contact" className="hover:text-black text-white transition-colors duration-300">
         <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-white border-2 border-black before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56">
-            <span className="relative z-10">Contact</span>
+            <span className="relative z-10">Contact Us</span>
         </button>
     </Link>
 </div>
