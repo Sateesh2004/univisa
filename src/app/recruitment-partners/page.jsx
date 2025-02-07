@@ -18,14 +18,20 @@ const page = () => {
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
           <div className="text-left w-full">
           <h1 className="text-8xl font-bold text-center  tracking-tight">
-            <WaveText text="Welcome to Reborn" />
+            <WaveText text="Partner with Us" />
+            <WaveText text="Empower Your Students" />
           </h1>
            
           </div>
         </div>
       </section>
     </div>
-  
+  <div className=' flex justify-between px-10 py-10  bg-black '>
+    <div className='bg-white w-[33%]'></div>
+    <div className='bg-white w-[33%]'></div>
+    <div className='bg-white w-[33%]'></div>
+
+  </div>
   <Footer/>
   </>
   )

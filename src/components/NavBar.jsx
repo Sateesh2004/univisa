@@ -17,11 +17,12 @@ export default function Navbar() {
     <div className="max-w-7xl mx-auto   ">
       <div className="flex justify-between items-center h-20">
         <div className="flex-shrink-0">
-          <img src="/newLogo.png" className="w-48" alt="Logo"/>
+          <Link href="/">     <img src="/newLogo.png" className="w-48" alt="Logo"/></Link>
+     
         </div>
 
         <div className="hidden text-xl font-bold items-center tracking-[1px] md:flex space-x-8">
-          <Link href="/" className="   hover:text-blue-600 text-black transition-colors duration-300">Countries</Link>
+          <Link href="#countries" className="   hover:text-blue-600 text-black transition-colors duration-300">Countries</Link>
           <Link href="/students" className=" hover:text-blue-600 text-black transition-colors duration-300">Students</Link>
           <Link href="/recruitment-partners" className=" hover:text-blue-600 text-black transition-colors duration-300">Recruitment Partners</Link>
           <Link href="/institutions" className=" hover:text-blue-600 text-black transition-colors duration-300">Institutions</Link>

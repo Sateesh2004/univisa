@@ -18,7 +18,8 @@ const page = () => {
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
           <div className="text-left w-full">
           <h1 className="text-8xl font-bold text-center  tracking-tight">
-            <WaveText text="Welcome to Reborn" />
+            <WaveText text="Maximize Your Reach." />
+            <WaveText text="Minimize Your Effort." />
           </h1>
            
           </div>

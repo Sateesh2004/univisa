@@ -1,90 +1,90 @@
 // components/StudyDestinations.jsx
 export default function Universities() {
-    const destinations = [
-      {
-        country: "USA",
-        image: "/countries/USA.png",
-        flag: "🇨🇦",
-      },
-      {
-        country: "UK",
-        image: "/u2.png",
-        flag: "🇬🇧",
-      },
-      {
-        country: "US",
-        image: "/u3.png",
-        flag: "🇺🇸",
-      },
-      {
-        country: "Australia",
-        image: "/u4.png",
-        flag: "🇦🇺",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-      {
-        country: "Ireland",
-        image: "/u5.png",
-        flag: "🇮🇪",
-      },
-    ];
+  const destinations = [
+    {
+      country: "The USA",
+      image: "/countries/USA.png",
+      flag: "🇺🇸", // Corrected flag
+    },
+    {
+      country: "The UK",
+      image: "/countries/UK.png",
+      flag: "🇬🇧",
+    },
+    {
+      country: "Canada", // Corrected spelling and capitalization
+      image: "/countries/CANADA.png",
+      flag: "🇨🇦", // Corrected flag
+    },
+    {
+      country: "Australia",
+      image: "/countries/AUS.png",
+      flag: "🇦🇺",
+    },
+    {
+      country: "Germany",
+      image: "/countries/GER.png",
+      flag: "🇩🇪", // Corrected flag
+    },
+    {
+      country: "Singapore",
+      image: "/countries/SINGA.png",
+      flag: "🇸🇬", // Corrected flag
+    },
+    {
+      country: "Ireland",
+      image: "/countries/Ire.png", // Corrected image path
+      flag: "🇮🇪",
+    },
+    {
+      country: "Mauritius",
+      image: "/countries/MAUR.png", // Corrected image path
+      flag: "🇲🇺", // Corrected flag
+    },
+    {
+      country: "France", // Corrected spelling and capitalization
+      image: "/countries/FRA.png", // Corrected image path
+      flag: "🇫🇷", // Corrected flag
+    },
+    {
+      country: "Malta",
+      image: "/countries/MAL.png", // Corrected image path
+      flag: "🇲🇹", // Corrected flag
+    },
+    {
+      country: "Latvia",
+      image: "/countries/LAT.png", // Corrected image path
+      flag: "🇱🇻", // Corrected flag
+    },
+    {
+      country: "Denmark",
+      image: "/countries/DEN.png", // Corrected image path
+      flag: "🇩🇰", // Corrected flag
+    },
+    {
+      country: "Finland",
+      image: "/countries/FIN.png", // Corrected image path
+      flag: "🇫🇮", // Corrected flag
+    },
+    {
+      country: "Lithuania",
+      image: "/countries/LUTH.png", // Corrected image path
+      flag: "🇱🇹", // Corrected flag
+    },
+    {
+      country: "Greece",
+      image: "/countries/GRE.png", // Corrected image path
+      flag: "🇬🇷", // Corrected flag
+    },
+    {
+      country: "Hungary", // Corrected spelling
+      image: "/countries/HUN.png", // Corrected image path
+      flag: "🇭🇺", // Corrected flag
+    },
+  ];
   
     return (
-      <section className="py-12 bg-gray-50">
+      <section id="countries" className="py-12 bg-gray-50">
         <h2 className="text-2xl font-bold text-center mb-8">
           Choose Your Study Abroad Destination
         </h2>
@@ -117,6 +117,8 @@ export default function Universities() {
           ))}
         </div>
       </section>
+      
+
     );
   }
   

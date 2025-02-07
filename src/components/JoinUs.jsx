@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const JoinUs = () => {
@@ -53,7 +54,9 @@ const JoinUs = () => {
         </div>
       </div>
     </div>
+    <Link href="/contact#form">
       <button className='text-center mt-5 bg-white p-2 font-bold text-[20px] block border rounded'>Apply Now </button>
+      </Link>
   </div>
 </div>
   )
