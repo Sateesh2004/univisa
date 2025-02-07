@@ -17,6 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-typical": "^0.1.3",
+    "text-animation": "^1.2.10",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

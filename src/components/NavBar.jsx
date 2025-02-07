@@ -13,19 +13,20 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-1 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="bg-[#ffffff00] relative  top-0 z-50">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-1 lg:px-8">
+        <div className="flex justify-between  items-center h-20">
           <div className="flex-shrink-0">
             <Image src="/newLogo.png"  width={200} height={200} alt=""/>
           </div>
 
           <div className="hidden md:flex space-x-8">
-            <Link href="." className={`${pathName === '/countries' && 'text-blue-600'} font-bold hover:text-blue-600`}>Countries</Link>
-            <Link href="/students" className={`font-bold ${pathName === '/students' ?"text-blue-600":"text-black"} hover:text-blue-600`}>Students</Link>
-            <Link href="/RecruitmentPartners" className={` font-bold   ${pathName === '/RecruitmentPartners'?"text-blue-600":"text-black"} hover:text-blue-600`}>Recruitment Partners</Link>
-            <Link href="/institutions" className={ `font-bold ${pathName === '/institutions'?"text-blue-600":"text-black"} hover:text-blue-600`}>Institutions</Link>
-            <Link href="/contact" className={`font-bold hover:text-blue-600 ${pathName === '/contact'?"text-blue-600":"text-black"}`}>Contact Us</Link>
+            <Link href="." className={`${pathName === '/countries' && 'text-white'} font-bold hover:text-blue-600 text-white`}>Countries</Link>
+            <Link href="/students" className={`font-bold ${pathName === '/students' ?"text-white":"text-black"} hover:text-blue-600 text-white`}>Students</Link>
+            <Link href="/RecruitmentPartners" className={` font-bold   ${pathName === '/RecruitmentPartners'?"text-white":"text-black"} hover:text-blue-600 text-white`}>Recruitment Partners</Link>
+            <Link href="/institutions" className={ `font-bold ${pathName === '/institutions'?"text-[#1a48ce]":"text-black"} hover:text-blue-600 text-white`}>Institutions</Link>
+            <Link href="/contact" className={`font-bold hover:text-blue-600 ${pathName === '/contact'?"text-white":"text-black"} text-white`}>Contact Us</Link>
+            <Link href="/demo" className={`font-bold hover:text-blue-600 ${pathName === '/demo'?"text-white":"text-black"} text-white`}>Demo</Link>
           </div>
 
           {/* Mobile Menu Button */}

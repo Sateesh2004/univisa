@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         color="#1a48ce"
         
         />
-        <NavBar/>
+        {/* <NavBar/> */}
         {children}
        {/* <Footer/> */}
       </body>
