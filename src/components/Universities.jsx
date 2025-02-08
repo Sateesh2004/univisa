@@ -19,7 +19,7 @@ export default function Universities() {
   ];
 
   return (
-    <section id="countries" className="py-12 bg-gray-50">
+    <section id="countries" className="py-12 bg-white">
       <h2 className="text-2xl font-bold text-center mb-8">
         Choose Your Study Abroad Destination
       </h2>
@@ -27,7 +27,7 @@ export default function Universities() {
         {destinations.map((destination, index) => (
           <div
             key={index}
-            className="rounded-2xl shadow-md bg-white overflow-hidden hover:scale-105 transition-transform"
+            className="rounded-2xl shadow-md hover:shadow-lg bg-white overflow-hidden hover:scale-105 transition-transform"
           >
             <div className="relative pt-[75%] w-full">
               <img

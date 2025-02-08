@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 const AnimatedButton = ({ children, href, className = "" }) => (
   <a 
     href={href} 
-    className={`relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-indigo-600 group hover:bg-gray-50 ${className}`}
+    className={`relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-bold  border-2 border-white rounded-full text-indigo-600 group bg-gray-50 ${className}`}
   >
     <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
     <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
@@ -60,13 +60,13 @@ const Page = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
+      <section className="relative h-[88vh]  bg-[url(/rec.jpg)] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
         <Navbar />
         
         <div className="relative mx-auto max-w-screen-xl px-4 flex-col py-32 sm:px-6 lg:flex lg:min-h-[calc(100vh-80px)] lg:items-center lg:px-8">
           <div className="w-full text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold text-white tracking-tight mb-8">
+            <h1 className="text-7xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-8">
               <WaveText text="Partner with Us" />
               <WaveText text="Empower Your Students" />
             </h1>
@@ -75,20 +75,16 @@ const Page = () => {
           </div>
           {showButtons && (
               <motion.div 
-                className="mt-12 flex flex-wrap justify-center gap-6"
+                className="mt-8 flex flex-wrap justify-center gap-6"
                 variants={buttonContainer}
                 initial="hidden"
                 animate="show"
               >
-                <motion.div variants={buttonItem}>
-                  <AnimatedButton href="#learn-more">
-                    Learn More
-                  </AnimatedButton>
-                </motion.div>
+                
                 
                 <motion.div variants={buttonItem}>
-                  <AnimatedButton href="#contact">
-                    Get Started
+                  <AnimatedButton href="/contact">
+                    Partner with Us
                   </AnimatedButton>
                 </motion.div>
               </motion.div>
@@ -96,9 +92,97 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Rest of the sections remain the same */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        {/* ... (rest of the code remains unchanged) ... */}
+      <section className="py-20 bg-[#f9fafb]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-16">
+            Why Choose UniViza
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {/* Card 1 */}
+            <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+              <div className="h-20  w-20 mx-auto mb-6">
+                <img
+                  src="/Communication-2.svg"
+                  className="w-full h-full object-contain"
+                  alt="Top Institutions"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-4">
+               Choose From Top institutions Worldwide
+              </h3>
+              <p className="text-gray-600 text-center">
+                Choose from prestigious institutions worldwide for your students
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+              <div className="h-20 w-20 mx-auto mb-6">
+                <img
+                  src="/Communication-2.svg"
+                  className="w-full h-full object-contain"
+                  alt="Higher Commission"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-4">
+               Higher Commission Rates
+              </h3>
+              <p className="text-gray-600 text-center">
+                Earn competitive commission rates for successful placements
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+              <div className="h-20 w-20 mx-auto mb-6">
+                <img
+                  src="/Communication-2.svg"
+                  className="w-full h-full object-contain"
+                  alt="Complete Support"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-4">
+                End to End Support
+              </h3>
+              <p className="text-gray-600 text-center">
+                End-to-end assistance from application through visa approval
+              </p>
+            </div>
+            {/* Card 3 */}
+            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+              <div className="h-20 w-20 mx-auto mb-6">
+                <img
+                  src="/Communication-2.svg"
+                  className="w-full h-full object-contain"
+                  alt="Complete Support"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-4">
+                Maximize Growth and Minimize Cost
+              </h3>
+              <p className="text-gray-600 text-center">
+                End-to-end assistance from application through visa approval
+              </p>
+            </div>
+            {/* Card 3 */}
+            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+              <div className="h-20 w-20 mx-auto mb-6">
+                <img
+                  src="/Communication-2.svg"
+                  className="w-full h-full object-contain"
+                  alt="Complete Support"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-center mb-4">
+                Increase Your Students' Chances of Admission
+              </h3>
+              <p className="text-gray-600 text-center">
+                End-to-end assistance from application through visa approval
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Universities />
