@@ -36,7 +36,6 @@ const ImageTextSwitcher = () => {
 
     return (
         <div className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white py-16 px-4 md:px-8">
-            {/* Headings Row */}
             <h1 className="text-6xl  font-bold mb-12 text-center">Committed to Your Journey</h1>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mb-12 items-center justify-center">
                 {headings.map((heading, index) => (

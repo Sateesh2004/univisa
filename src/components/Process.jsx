@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Process = (props) => {
@@ -18,8 +19,10 @@ const Process = (props) => {
                     className="relative grid grid-cols-1 text-center gap-y-8 sm:gap-y-10 md:gap-y-12 md:grid-cols-3 gap-x-12">
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white  border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white  rounded-full ">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                                <Image src="/step1.png" alt="step1" width={100} height={100}/>
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
@@ -29,8 +32,10 @@ const Process = (props) => {
                     </div>
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white dark:bg-gray-800 border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count+1}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white dark:bg-gray-800  rounded-full">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                                <img src="/step2.png" width={100} height={100} alt="" />
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
@@ -40,8 +45,10 @@ const Process = (props) => {
                     </div>
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white dark:bg-gray-800 border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count+2}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white dark:bg-gray-800 ">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                            <img src="/step3.png" width={100} height={100} alt="" />
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
@@ -68,19 +75,23 @@ const Process = (props) => {
                     className="relative grid grid-cols-1 text-center gap-y-8 sm:gap-y-10 md:gap-y-12 md:grid-cols-3 gap-x-12">
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white  border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count+3}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white ">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                            <img src="/step4p.png" width={100} height={100} alt="" />
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
-                            Offer Letter & Acceptance
+                            Application Review by Institution
                         </h3>
                         
                     </div>
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white  border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count+4}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white  ">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                            <img src="/step4.png" width={100} height={100} alt="" />
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
@@ -90,8 +101,10 @@ const Process = (props) => {
                     </div>
                     <div>
                         <div
-                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-[#1a48ce] rounded-full shadow">
-                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">{props.count+5}</span>
+                            className="flex items-center justify-center w-16 h-16 mx-auto bg-white">
+                            <span className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                            <img src="/step6.png" width={100} height={100} alt="" />
+                            </span>
                         </div>
                         <h3
                             className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-gray-900 dark:text-white md:mt-10">
