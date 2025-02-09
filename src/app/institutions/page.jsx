@@ -66,7 +66,7 @@ const page = () => {
     <>
     
     <div>
-      <section className="relative h-[88vh] bg-[url(/ins.jpg)] bg-cover bg-center bg-no-repeat">
+      {/* <section className="relative h-[88vh] bg-[url(/insmain.jpg)] bg-cover bg-center bg-no-repeat">
         <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
         <Navbar />
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
@@ -94,100 +94,135 @@ const page = () => {
                 </motion.div>
               </motion.div>
             )}
-      </section>
+      </section> */}
+       <section className="relative h-[88vh] bg-[url(/insmain.jpg)]  bg-cover bg-center bg-no-repeat">
+  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <Navbar />
+
+  <div className="relative flex flex-col items-center justify-center text-center text-white px-6 py-32 lg:py-32 max-w-5xl mx-auto z-10">
+    <h1 className="text-2xl text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
+      <WaveText text="Maximize Your International Reach" />
+    </h1>
+
+    {showButtons && (
+      <motion.div
+        className="mt-32 flex flex-col  sm:flex-col md:flex-row gap-4 sm:gap-6 justify-center"
+        variants={buttonContainer}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={buttonItem}>
+          <AnimatedButton className='text-sm w-full lg:text-xl' href="/contact?type=institution">Join as Institution</AnimatedButton>
+        </motion.div>
+       
+      </motion.div>
+    )}
+  </div>
+</section>
     </div>
-    <section className="py-20 bg-[#f9fafb]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-16">
-            Why Choose UniViza
-          </h2>
+    
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {/* Card 1 */}
-            <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20  w-20 mx-auto mb-6">
-                <img
-                  src="/insw1.png"
-                  className="w-full h-full object-contain"
-                  alt="Top Institutions"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-               Quality Applications
-              </h3>
-              <p className="text-gray-600 text-center">
-                Choose from prestigious institutions worldwide for your students
-              </p>
-            </div>
 
-            {/* Card 2 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20 w-20 mx-auto mb-6">
-                <img
-                  src="/insw2.png"
-                  className="w-full h-full object-contain"
-                  alt="Higher Commission"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-               Personalized Marketing and Outreach
-              </h3>
-              <p className="text-gray-600 text-center">
-                Earn competitive commission rates for successful placements
-              </p>
-            </div>
 
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20 w-20 mx-auto mb-6">
-                <img
-                  src="/insw3.png"
-                  className="w-full h-full object-contain"
-                  alt="Complete Support"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-                Building Long Term Relationships
-              </h3>
-              <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
-              </p>
+<section className="py-16 bg-[#f9fafb]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl md:text-6xl text-black font-bold text-center mb-16">
+          Why Choose UniViza
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+          {/* First Row */}
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw1.png"
+                className="w-full h-full object-contain"
+                alt="High-Quality Student Applications"
+              />
             </div>
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+            <h3 className="text-xl font-semibold text-center mb-4">
+            High-Quality Student Applications       </h3>
+            <p className="text-gray-600 text-center">
+            Providing exceptional student applications for successful admissions.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw2.png"
+                className="w-full h-full object-contain"
+                alt="Personalized Marketing & Outreach"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">
+            Personalized Marketing & Outreach
+            </h3>
+            <p className="text-gray-600 text-center">
+            Personalized marketing strategies and effective outreach for maximum impact.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw3.png"
+                className="w-full h-full object-contain"
+                alt="Building Long Term Relationships"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">
+            Building Long Term Relationships           </h3>
+            <p className="text-gray-600 text-center">
+            We foster lasting partnerships through trust, transparency and mutual growth.
+            </p>
+          </div>
+
+          {/* Second Row with centering wrapper */}
+          <div className="lg:col-span-3 flex justify-center gap-8 flex-wrap">
+            <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
                   src="/insw4.png"
                   className="w-full h-full object-contain"
-                  alt="Complete Support"
+                  alt="Document Verification"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-                Document Verification
+              Document Verification
               </h3>
               <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
+              Verification of all essential documents for a smooth admission process.
               </p>
             </div>
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+
+            <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
                   src="/insw5.png"
                   className="w-full h-full object-contain"
-                  alt="Complete Support"
+                  alt="Admission Ready Applications"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-                Verified & Admission ready Applications
+              Applications
               </h3>
               <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
-              </p>
+              Thoroughly verified and fully prepared applications for successful admissions.
+
+                     </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+
+
+
+
+
   <Process count={1} />
   <Footer/>
   </>

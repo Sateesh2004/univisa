@@ -74,7 +74,7 @@ const page = () => {
     <>
 
       <div>
-        <section className="relative  bg-[url(/studentMain.jpg)] h-[88vh] bg-cover bg-center bg-no-repeat">
+        {/* <section className="relative  bg-[url(/studentMain.jpg)] h-[88vh] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
           <Navbar />
           <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
@@ -107,101 +107,118 @@ const page = () => {
               </motion.div>
             </motion.div>
           )}
-        </section>
+        </section> */}
+        <section className="relative h-[88vh] bg-[url(/studentMain.jpg)] bg-cover bg-center bg-no-repeat">
+  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <Navbar />
+
+  <div className="relative flex flex-col items-center justify-center text-center text-white px-6 py-32 lg:py-32 max-w-5xl mx-auto z-10">
+    <h1 className="text-2xl text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
+      <WaveText text="Your Global Education Begins Here" />
+    </h1>
+
+    {showButtons && (
+      <motion.div
+        className="mt-32 flex flex-col  sm:flex-col md:flex-row gap-4 sm:gap-6 justify-center"
+        variants={buttonContainer}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={buttonItem}>
+          <AnimatedButton className='text-sm w-full lg:text-xl' href="/contact?type=student">Join as Student</AnimatedButton>
+        </motion.div>
+        
+      </motion.div>
+    )}
+  </div>
+</section>
       </div>
       {/* <JoinUs/> */}
-      <section className="py-20 bg-[#f9fafb]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-16">
-            Why Choose UniViza
-          </h2>
+      <section className="py-16 bg-[#f9fafb]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl md:text-6xl text-black font-bold text-center mb-16">
+          Why Choose UniViza
+        </h2>
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {/* Card 1 */}
-            <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20  w-20 mx-auto mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+          {/* First Row */}
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw1.png"
+                className="w-full h-full object-contain"
+                alt="High-Quality Student Applications"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">
+            Choose From Top Institutions Worldwide            </h3>
+            <p className="text-gray-600 text-center">
+            Explore educational opportunities from globally renowned institutions to shape your future.            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw2.png"
+                className="w-full h-full object-contain"
+                alt="Personalized Marketing & Outreach"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">
+            Hassle Free Application Process            </h3>
+            <p className="text-gray-600 text-center">
+            We handle the complexities, so you can focus on preparing for your academic journey.            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
+            <div className="h-20 w-20 mx-auto mb-6">
+              <img
+                src="/insw3.png"
+                className="w-full h-full object-contain"
+                alt="Building Long Term Relationships"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-center mb-4">
+            Personalized Expert Support & Assistance            </h3>
+            <p className="text-gray-600 text-center">
+            Get dedicated guidance tailored to your unique needs and aspirations.            </p>
+          </div>
+
+          {/* Second Row with centering wrapper */}
+          <div className="lg:col-span-3 flex justify-center gap-8 flex-wrap">
+            <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
+              <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/sw1.png"
+                  src="/insw4.png"
                   className="w-full h-full object-contain"
-                  alt="Top Institutions"
+                  alt="Document Verification"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-                Access to Top Instituions & Programs
-              </h3>
+              End to End Support              </h3>
               <p className="text-gray-600 text-center">
-                Choose from prestigious institutions worldwide for your students
-              </p>
+              From the initial application to enrollment, we provide end-to-end support.              </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
+            <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/sw2.png"
+                  src="/insw5.png"
                   className="w-full h-full object-contain"
-                  alt="Higher Commission"
+                  alt="Admission Ready Applications"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-                Hassle Free Application Process
-              </h3>
+              High Success Rate              </h3>
               <p className="text-gray-600 text-center">
-                Earn competitive commission rates for successful placements
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20 w-20 mx-auto mb-6">
-                <img
-                  src="/sw3.png"
-                  className="w-full h-full object-contain"
-                  alt="Complete Support"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-                Personalized Support
-              </h3>
-              <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
-              </p>
-            </div>
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20 w-20 mx-auto mb-6">
-                <img
-                  src="/sw4.png"
-                  className="w-full h-full object-contain"
-                  alt="Complete Support"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-                End to End Support
-              </h3>
-              <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
-              </p>
-            </div>
-            {/* Card 3 */}
-            <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
-              <div className="h-20 w-20 mx-auto mb-6">
-                <img
-                  src="/sw5.png"
-                  className="w-full h-full object-contain"
-                  alt="Complete Support"
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-4">
-                High Success Rate
-              </h3>
-              <p className="text-gray-600 text-center">
-                End-to-end assistance from application through visa approval
-              </p>
+              We help maximize your chances of getting into top institutions.              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
      <Universities heading="Choose Your Study Abroad Destination" />
       <Footer />
     </>

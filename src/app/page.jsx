@@ -9,10 +9,11 @@ import WaveText from '@/components/WaveText';
 import Universities from '@/components/Universities';
 import ImageSwitcher from '@/components/ImageSwitcher';
 import Journey from '@/components/Journey';
+import Link from 'next/link';
 
 
 const AnimatedButton = ({ children, href, className = "" }) => (
-  <a 
+  <Link 
     href={href} 
     className={`relative inline-flex items-center px-12 py-3 overflow-hidden text-lg  font-bold border-2 border-white rounded-full text-indigo-600 group bg-gray-50 ${className}`}
   >
@@ -23,7 +24,7 @@ const AnimatedButton = ({ children, href, className = "" }) => (
       </svg>
     </span>
     <span className="relative">{children}</span>
-  </a>
+  </Link>
 );
 
 
@@ -71,42 +72,39 @@ const page = () => {
     <>
     
     <div>
-      <section className="relative  h-[88vh]  bg-[url(/home.jpg)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
-        <Navbar />
-        <div className="relative  mt-5 mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
-          <div className="text-left  w-full">
-          <h1 className="text-7xl  font-bold text-center  tracking-tight">
-            <WaveText text="We Make Global Education Easy" />
-          </h1>
-           
-          </div>
-        </div>
-        {showButtons && (
-              <motion.div 
-                className="mt-3 flex flex-wrap justify-center gap-6"
-                variants={buttonContainer}
-                initial="hidden"
-                animate="show"
-              >
-                
-                
-                <motion.div className="flex gap-24" variants={buttonItem}>
-                  <AnimatedButton href="/contact">
-                    Join as Student
-                  </AnimatedButton>
-                  <AnimatedButton href="/contact">
-                    Join as Partner
-                  </AnimatedButton>
-                  <AnimatedButton href="/contact">
-                    Join as Institution
-                  </AnimatedButton>
-                </motion.div>
-              </motion.div>
-            )}
-      </section>
-    
-    </div>
+    <section className="relative h-[88vh] bg-[url(/home.jpg)] bg-cover bg-center bg-no-repeat">
+  <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <Navbar />
+
+  <div className="relative flex flex-col items-center justify-center text-center text-white px-6 py-32 lg:py-32 max-w-5xl mx-auto z-10">
+    <h1 className="text-2xl text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
+      <WaveText text="We  Make Global Education Easy" />
+    </h1>
+
+    {showButtons && (
+      <motion.div
+        className="mt-32 flex flex-col  sm:flex-col md:flex-row gap-4 sm:gap-6 justify-center"
+        variants={buttonContainer}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={buttonItem}>
+          <AnimatedButton className='text-sm w-full lg:text-xl' href="/students">Join as Student</AnimatedButton>
+        </motion.div>
+        <motion.div  variants={buttonItem}>
+          <AnimatedButton className='text-sm w-full lg:text-xl' href="/recruitment-partners">Join as Partner</AnimatedButton>
+        </motion.div>
+        <motion.div  variants={buttonItem}>
+          <AnimatedButton className='text-sm lg:text-xl' href="/institutions">Join as Institution</AnimatedButton>
+        </motion.div>
+      </motion.div>
+    )}
+  </div>
+</section>
+
+
+      </div>
     
     <ImageSwitcher/>
        <Universities heading="Top Study Abroad Destinations" />
