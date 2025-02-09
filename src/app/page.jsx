@@ -78,7 +78,7 @@ const page = () => {
   <Navbar />
 
   <div className="relative flex flex-col items-center justify-center text-center text-white px-6 py-32 lg:py-32 max-w-5xl mx-auto z-10">
-    <h1 className="text-2xl text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
+    <h1 className="text-2xl truncate sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
       <WaveText text="We  Make Global Education Easy" />
     </h1>
 
