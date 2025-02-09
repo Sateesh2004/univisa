@@ -207,7 +207,7 @@ const page = () => {
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-              Applications
+              Offer Ready Applications
               </h3>
               <p className="text-gray-600 text-center">
               Thoroughly verified and fully prepared applications for successful admissions.

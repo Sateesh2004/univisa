@@ -93,43 +93,55 @@ const ContactForm = () => {
                 ))}
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="be5f2b6b-2156-4b9f-84e6-33c0d450aa2b"/>
                 {/* Rest of your form code remains exactly the same */}
+                {selectedOption === 'Recruitment Partner' && (
+                    <div className="space-y-2">
+                      <Label htmlFor="company">Agency Name</Label>
+                      <Input id="company" placeholder="Agency name" name="Agency" />
+                    </div>
+                  )}
+                    {selectedOption === 'Institution' && (
+                    <div className="space-y-2">
+                      <Label htmlFor="institution">Institution Name<span className='text-red-500'>*</span></Label>
+                      <Input id="institution" name="Institute" placeholder="Institution Name" />
+                    </div>
+                  )}
                 <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+
+             
+
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name<span className='text-red-500'>*</span></Label>
-                    <Input id="name" placeholder="John Doe" />
+                    <Input id="name" name="fname" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Phone<span className='text-red-500'>*</span></Label>
-                    <Input id="email" type="tel" placeholder="+91 91XXXXXXXXX" required />
+                    <Input id="email" name="phone" type="tel" placeholder="+91 91XXXXXXXXX" required />
                   </div>
                 </motion.div>
 
                 <motion.div {...fadeIn} className="gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="phone">Email<span className='text-red-500'>*</span></Label>
-                    <Input id="phone" type="email" placeholder="abc@example.com" />
+                    <Input id="phone" name="email" type="email" placeholder="abc@example.com" />
                   </div>
-                  {selectedOption === 'Recruitment Partner' && (
+                  {/* {selectedOption === 'Recruitment Partner' && (
                     <div className="space-y-2">
-                      <Label htmlFor="company">Your Agency</Label>
+                      <Label htmlFor="company">Agency Name</Label>
                       <Input id="company" placeholder="Your Agency" />
                     </div>
-                  )}
-                  {selectedOption === 'Institution' && (
-                    <div className="space-y-2">
-                      <Label htmlFor="institution">Institution Name<span className='text-red-500'>*</span></Label>
-                      <Input id="institution" placeholder="University/College Name" />
-                    </div>
-                  )}
+                  )} */}
+                
                 </motion.div>
 
                 {selectedOption === 'Recruitment Partner' && (
                   <motion.div {...fadeIn} className="gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="website">Location</Label>
-                      <Input id="website" type="url" placeholder="City, Country" />
+                      <Input id="website" name="location" type="text" placeholder="City, Country" />
                     </div>
                   </motion.div>
                 )}
@@ -138,11 +150,11 @@ const ContactForm = () => {
                   <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="type">Institution Type<span className='text-red-500'>*</span></Label>
-                      <Input id="type" placeholder="University/College/School" />
+                      <Input id="type" name="type" placeholder="University/College/School" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="location">Location<span className='text-red-500'>*</span></Label>
-                      <Input id="location" placeholder="City, Country" />
+                      <Input id="location" name="location" placeholder="City, Country" />
                     </div>
                   </motion.div>
                 )}
@@ -153,6 +165,7 @@ const ContactForm = () => {
                     id="message" 
                     placeholder="Your message here..." 
                     className="min-h-[150px]"
+                    name="address"
                   />
                 </motion.div>
 
@@ -168,6 +181,7 @@ const ContactForm = () => {
         </div>
       </div>
     </motion.section>
+    
   );
 };
 
