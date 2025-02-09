@@ -114,7 +114,7 @@ const ContactForm = () => {
                   {selectedOption === 'Recruitment Partner' && (
                     <div className="space-y-2">
                       <Label htmlFor="company">Your Agency</Label>
-                      <Input id="company" placeholder="Your Company" />
+                      <Input id="company" placeholder="Your Agency" />
                     </div>
                   )}
                   {selectedOption === 'Institution' && (
