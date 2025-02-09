@@ -83,7 +83,7 @@ const Page = () => {
                 
                 
                 <motion.div variants={buttonItem}>
-                  <AnimatedButton href="/contact">
+                  <AnimatedButton href="/contact?type=recruitment">
                     Partner with Us
                   </AnimatedButton>
                 </motion.div>
@@ -103,7 +103,7 @@ const Page = () => {
             <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20  w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/rcw1.png"
                   className="w-full h-full object-contain"
                   alt="Top Institutions"
                 />
@@ -120,7 +120,7 @@ const Page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/rcw2.png"
                   className="w-full h-full object-contain"
                   alt="Higher Commission"
                 />
@@ -137,7 +137,7 @@ const Page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/rcw3.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -153,7 +153,7 @@ const Page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/rcw4.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -169,7 +169,7 @@ const Page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/rcw5.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -185,7 +185,7 @@ const Page = () => {
         </div>
       </section>
 
-      <Universities />
+      <Universities heading="Access to Top Study Abroad Destinations" />
       <Footer />
     </>
   );

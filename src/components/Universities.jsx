@@ -1,4 +1,4 @@
-export default function Universities() {
+export default function Universities(props) {
   const destinations = [
     { country: "The USA", image: "/countries/USA.png", flag: "🇺🇸" },
     { country: "The UK", image: "/countries/UK.png", flag: "🇬🇧" },
@@ -21,7 +21,7 @@ export default function Universities() {
   return (
     <section id="countries" className="py-12 bg-white">
       <h2 className="text-2xl font-bold text-center mb-8">
-        Choose Your Study Abroad Destination
+      {props.heading}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 px-8 max-w-7xl mx-auto">
         {destinations.map((destination, index) => (

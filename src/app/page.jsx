@@ -109,7 +109,8 @@ const page = () => {
     </div>
     
     <ImageSwitcher/>
-  <Universities/>
+       <Universities heading="Top Study Abroad Destinations" />
+ 
   <Journey/>
   <Footer/>
   </>

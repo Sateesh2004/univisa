@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  
+
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +22,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
-            <Link href="/">
+            
+            <Link  href="/">
               <img src="/newLogo.png" className="w-48" alt="Logo"/>
             </Link>
           </div>
@@ -28,7 +31,7 @@ export default function Navbar() {
           <div className="hidden text-xl font-bold items-center tracking-[1px] md:flex space-x-8">
             <Link 
               href="#countries" 
-              className={`${pathName === '/institutions' ? 'invisible' : ''} relative group  py-2 text-black transition-colors duration-300`}
+              className={`${pathName === '/institutions' || pathName === '/contact' ? 'invisible' : ''} relative group  py-2 text-black transition-colors duration-300`}
             >
               <span>Countries</span>
               <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#471ace] group-hover:w-full transition-all duration-300 ease-in-out"></span>

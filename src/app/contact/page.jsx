@@ -1,147 +1,177 @@
 "use client"
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Navbar from '@/components/NavBar';
-import WaveText from '@/components/WaveText';
-import React, { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Loader2 } from "lucide-react"
+import { motion } from 'framer-motion'
 
 const Page = () => {
-  const [selectedOption, setSelectedOption] = useState('Agent');
+  const searchParams = useSearchParams();
+  const [selectedOption, setSelectedOption] = useState('Student');
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    const typeFromUrl = searchParams.get('type');
+    if (typeFromUrl) {
+      const optionMap = {
+        'student': 'Student',
+        'recruitment': 'Recruitment Partners',
+        'institution': 'Institutions'
+      };
+      
+      const validOption = optionMap[typeFromUrl.toLowerCase()];
+      if (validOption) {
+        setSelectedOption(validOption);
+      }
+    }
+    // Add a small delay to ensure smooth transition
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, [searchParams]);
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.4 }
+  };
+
+  if (isLoading) {
+    return (
+      <>
+        <Navbar />
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+          <div className="text-center">
+            <Loader2 className="h-12 w-12 animate-spin text-blue-600 mx-auto" />
+            
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
-     <div>
-      {/* <section className="relative h-[100vh] bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
-        <Navbar />
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
-          <div className="text-left w-full">
-          <h1 className="text-8xl font-bold text-center  tracking-tight">
-            <WaveText text="Welcome to Reborn" />
-          </h1>
-           
-          </div>
-        </div>
-      </section> */}
-    </div>
-    <Navbar />
-      <section id="form" className="bg-gray-100">
-         
+      <Navbar />
+      <motion.section 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="bg-gradient-to-b from-gray-50 to-white min-h-screen"
+      >
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
-            <div className="lg:col-span-2 flex ">
-             <img className='' src="/contacts.svg" alt="" />
+            <div className="lg:col-span-2 flex items-center justify-center">
+              <motion.img 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full max-w-md" 
+                src="/contacts.svg" 
+                alt="Contact illustration" 
+              />
             </div>
 
-            <div className="bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-              <form action="#" className="space-y-4">
-              <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                  <div>
-                    <label
-                      htmlFor="Option1"
-                      className={`block w-full cursor-pointer p-3 ${selectedOption === 'Agent' ? 'bg-[#1a48ce] text-white' : 'text-gray-600'}`}
+            <Card className="lg:col-span-3 shadow-xl">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3 mb-8">
+                  {['Student', 'Recruitment Partners', 'Institutions'].map((option) => (
+                    <Button
+                      key={option}
+                      variant={selectedOption === option ? "default" : "outline"}
+                      className="w-full transition-all duration-200"
+                      onClick={() => setSelectedOption(option)}
                     >
-                      <input
-                        className="sr-only"
-                        id="Option1"
-                        type="radio"
-                        name="option"
-                        checked={selectedOption === 'Agent'}
-                        onChange={() => setSelectedOption('Agent')}
-                      />
-                      <span className="text-sm">Students</span>
-                    </label>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="Option2"
-                      className={`block w-full cursor-pointer p-3 ${selectedOption === 'Student' ? 'bg-[#1a48ce] text-white' : 'text-gray-600'}`}
-                    >
-                      <input
-                        className="sr-only"
-                        id="Option2"
-                        type="radio"
-                        name="option"
-                        checked={selectedOption === 'Student'}
-                        onChange={() => setSelectedOption('Student')}
-                      />
-                      <span className="text-sm">Recruitment Partners</span>
-                    </label>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="Option3"
-                      className={`block w-full cursor-pointer p-3 ${selectedOption === 'University' ? 'bg-[#1a48ce] text-white' : 'text-gray-600'}`}
-                    >
-                      <input
-                        className="sr-only"
-                        id="Option3"
-                        type="radio"
-                        name="option"
-                        checked={selectedOption === 'University'}
-                        onChange={() => setSelectedOption('University')}
-                      />
-                      <span className="text-sm">Instituions</span>
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <label className="sr-only" htmlFor="name">Name</label>
-                  <input
-                    className="w-full border focus:outline-none border-gray-200 p-3 text-sm"
-                    placeholder="Name"
-                    type="text"
-                    id="name"
-                  />
+                      {option}
+                    </Button>
+                  ))}
                 </div>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div>
-                    <label className="sr-only" htmlFor="email">Email</label>
-                    <input
-                      className="w-full border focus:outline-none border-gray-200 p-3 text-sm"
-                      placeholder="Email address"
-                      type="email"
-                      id="email"
+                <form className="space-y-6">
+                  <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input id="name" placeholder="John Doe" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Phone</Label>
+                      <Input id="email" type="tel" placeholder="john@example.com" />
+                    </div>
+                  </motion.div>
+
+                  <motion.div {...fadeIn} className="gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Email</Label>
+                      <Input id="phone" type="email" placeholder="+1 (555) 000-0000" />
+                    </div>
+                    {/* {selectedOption === 'Student' && (
+                      <div className="space-y-2">
+                        <Label htmlFor="course">Desired Country</Label>
+                        <Input id="course" placeholder="e.g., Computer Science" />
+                      </div>
+                    )} */}
+                    {selectedOption === 'Recruitment Partners' && (
+                      <div className="space-y-2">
+                        <Label htmlFor="company">Agency Name</Label>
+                        <Input id="company" placeholder="Your Company" />
+                      </div>
+                    )}
+                    {selectedOption === 'Institutions' && (
+                      <div className="space-y-2">
+                        <Label htmlFor="institution">Institution Name</Label>
+                        <Input id="institution" placeholder="University/College Name" />
+                      </div>
+                    )}
+                  </motion.div>
+
+                  {selectedOption === 'Recruitment Partners' && (
+                    <motion.div {...fadeIn} className=" gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="website">Location</Label>
+                        <Input id="website" type="url" placeholder="https://..." />
+                      </div>
+                                          </motion.div>
+                  )}
+
+                  {selectedOption === 'Institutions' && (
+                    <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="type">Institution Type</Label>
+                        <Input id="type" placeholder="University/College/School" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="location">Location</Label>
+                        <Input id="location" placeholder="City, Country" />
+                      </div>
+                    </motion.div>
+                  )}
+
+                  <motion.div {...fadeIn} className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="Your message here..." 
+                      className="min-h-[150px]"
                     />
-                  </div>
+                  </motion.div>
 
-                  <div>
-                    <label className="sr-only" htmlFor="phone">Phone</label>
-                    <input
-                      className="w-full border focus:outline-none border-gray-200 p-3 text-sm"
-                      placeholder="Phone Number"
-                      type="tel"
-                      id="phone"
-                    />
-                  </div>
-                </div>
-
-              
-
-                <div>
-                  <label className="sr-only" htmlFor="message">Message</label>
-                  <textarea
-                    className="w-full border focus:outline-none border-gray-200 p-3 text-sm"
-                    placeholder="Message"
-                    rows="8"
-                    id="message"
-                  ></textarea>
-                </div>
-
-                <div className="mt-4">
-                  <button
-                    type="submit"
-                    className="inline-block w-full bg-[#1a48ce] px-5 py-3 font-medium text-white sm:w-auto"
+                  <Button 
+                    type="submit" 
+                    className="w-full sm:w-auto"
                   >
                     Send Enquiry
-                  </button>
-                </div>
-              </form>
-            </div>
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

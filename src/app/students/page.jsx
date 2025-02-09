@@ -11,11 +11,12 @@ import JoinUs from '@/components/JoinUs';
 
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 
 const AnimatedButton = ({ children, href, className = "" }) => (
-  <a 
-    href={href} 
+  <a
+    href={href}
     className={`relative inline-flex items-center px-12 py-3 overflow-hidden text-lg  font-bold border-2 border-white rounded-full text-indigo-600 group bg-gray-50 ${className}`}
   >
     <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
@@ -33,80 +34,83 @@ const page = () => {
 
 
 
-  
-    const [showButtons, setShowButtons] = useState(false);
-  
-    
-  
-      useEffect(() => {
-        const timer = setTimeout(() => {
-          setShowButtons(true);
-        }, 200);
-    
-        return () => clearTimeout(timer);
-      }, []);
-    
-      const buttonContainer = {
-        hidden: { opacity: 0 },
-        show: {
-          opacity: 1,
-          transition: {
-            delayChildren: 0.3,
-            staggerChildren: 0.2
-          }
-        }
-      };
-    
-      const buttonItem = {
-        hidden: { y: 20, opacity: 0 },
-        show: {
-          y: 0,
-          opacity: 1,
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 10
-          }
-        }}
+
+  const [showButtons, setShowButtons] = useState(false);
+
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButtons(true);
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const buttonContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const buttonItem = {
+    hidden: { y: 20, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  }
   return (
     <>
-    
-    <div>
-      <section className="relative  bg-[url(/studentMain.jpg)] h-[88vh] bg-cover bg-center bg-no-repeat">
-        <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
-        <Navbar />
-        <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
-          <div className="text-left w-full">
-          <h1 className="text-7xl font-bold text-center  tracking-tight">
-            <WaveText text="Your Global Education Begins Here" />
-            
-            
-          </h1>
-          
-           
+
+      <div>
+        <section className="relative  bg-[url(/studentMain.jpg)] h-[88vh] bg-cover bg-center bg-no-repeat">
+          <div className="absolute inset-0 sm:bg-transparent opacity-40 from-[#000000] to-[#000000] bg-gradient-to-r"></div>
+          <Navbar />
+          <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
+            <div className="text-left w-full">
+              <h1 className="text-7xl font-bold text-center  tracking-tight">
+                <WaveText text="Your Global Education Begins Here" />
+
+
+              </h1>
+
+
+            </div>
           </div>
-        </div>
-        {showButtons && (
-              <motion.div 
-                className="mt-3 flex flex-wrap justify-center gap-6"
-                variants={buttonContainer}
-                initial="hidden"
-                animate="show"
-              >
+          {showButtons && (
+            <motion.div
+              className="mt-3 flex flex-wrap justify-center gap-6"
+              variants={buttonContainer}
+              initial="hidden"
+              animate="show"
+            >
+
+
+              <motion.div className="flex gap-24" variants={buttonItem}>
+              
+                <AnimatedButton href="/contact?type=student">
+                  Begin Your Journey
+                </AnimatedButton>
                 
-                
-                <motion.div className="flex gap-24" variants={buttonItem}>
-                  <AnimatedButton href="/contact">
-                    Begin Your Journey
-                  </AnimatedButton>
-                  
-                </motion.div>
+
               </motion.div>
-            )}
-      </section>
-    </div>
-    {/* <JoinUs/> */}
-    <section className="py-20 bg-[#f9fafb]">
+            </motion.div>
+          )}
+        </section>
+      </div>
+      {/* <JoinUs/> */}
+      <section className="py-20 bg-[#f9fafb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl text-black md:text-4xl font-bold text-center mb-16">
             Why Choose UniViza
@@ -117,13 +121,13 @@ const page = () => {
             <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20  w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/sw1.png"
                   className="w-full h-full object-contain"
                   alt="Top Institutions"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-               Access to Top Instituions & Programs
+                Access to Top Instituions & Programs
               </h3>
               <p className="text-gray-600 text-center">
                 Choose from prestigious institutions worldwide for your students
@@ -134,13 +138,13 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/sw2.png"
                   className="w-full h-full object-contain"
                   alt="Higher Commission"
                 />
               </div>
               <h3 className="text-xl font-semibold text-center mb-4">
-               Hassle Free Application Process
+                Hassle Free Application Process
               </h3>
               <p className="text-gray-600 text-center">
                 Earn competitive commission rates for successful placements
@@ -151,7 +155,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/sw3.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -167,7 +171,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/sw4.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -183,7 +187,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/sw5.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -198,9 +202,9 @@ const page = () => {
           </div>
         </div>
       </section>
-  <Universities/>
-  <Footer/>
-  </>
+     <Universities heading="Choose Your Study Abroad Destination" />
+      <Footer />
+    </>
   )
 }
 

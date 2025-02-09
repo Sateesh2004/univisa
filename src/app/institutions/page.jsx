@@ -72,7 +72,7 @@ const page = () => {
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8">
           <div className="text-left w-full">
           <h1 className="text-7xl font-bold text-center  tracking-tight">
-            <WaveText text="Maximize Your Reach" />
+            <WaveText text="Maximize Your International Reach" />
           
           </h1>
            
@@ -88,7 +88,7 @@ const page = () => {
                 
                 
                 <motion.div variants={buttonItem}>
-                  <AnimatedButton href="/contact">
+                  <AnimatedButton href="/contact?type=Institutions">
                     Make Your Campus Global
                   </AnimatedButton>
                 </motion.div>
@@ -107,7 +107,7 @@ const page = () => {
             <div className="bg-white w-[30%]   rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20  w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/insw1.png"
                   className="w-full h-full object-contain"
                   alt="Top Institutions"
                 />
@@ -124,7 +124,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/insw2.png"
                   className="w-full h-full object-contain"
                   alt="Higher Commission"
                 />
@@ -141,7 +141,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/insw3.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -157,7 +157,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/insw4.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />
@@ -173,7 +173,7 @@ const page = () => {
             <div className="bg-white w-[30%] rounded-2xl p-8 transform  transition-transform duration-300 shadow-xl">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/Communication-2.svg"
+                  src="/insw5.png"
                   className="w-full h-full object-contain"
                   alt="Complete Support"
                 />

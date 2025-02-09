@@ -4,6 +4,7 @@ import React from 'react'
 const Process = (props) => {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-gray-900">
+        <h1 className='text-center mt-12 text-6xl font-bold'>How it Works</h1>
     <div className="mt-2 md:mt-0 py-12 pb-6 sm:py-16 lg:pb-24 overflow-hidden">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
             <div className="relative mt-12 lg:mt-20">
