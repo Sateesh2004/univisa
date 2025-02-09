@@ -11,7 +11,6 @@ import ImageSwitcher from '@/components/ImageSwitcher';
 import Journey from '@/components/Journey';
 import Link from 'next/link';
 
-
 const AnimatedButton = ({ children, href, className = "" }) => (
   <Link 
     href={href} 
@@ -70,7 +69,7 @@ const page = () => {
 
   return (
     <>
-    
+  
     <div>
     <section className="relative h-[88vh] bg-[url(/home.jpg)] bg-cover bg-center bg-no-repeat">
   <div className="absolute inset-0 bg-black bg-opacity-50"></div>
