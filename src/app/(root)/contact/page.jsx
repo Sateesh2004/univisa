@@ -111,7 +111,7 @@ const ContactForm = () => {
                     <Label htmlFor="phone">Email<span className='text-red-500'>*</span></Label>
                     <Input id="phone" type="email" placeholder="abc@example.com" />
                   </div>
-                  {selectedOption === 'Recruitment Partners' && (
+                  {selectedOption === 'Recruitment Partner' && (
                     <div className="space-y-2">
                       <Label htmlFor="company">Your Agency</Label>
                       <Input id="company" placeholder="Your Company" />

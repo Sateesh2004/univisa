@@ -101,8 +101,9 @@ const page = () => {
   <Navbar />
 
   <div className="relative flex flex-col items-center justify-center text-center text-white px-6 py-32 lg:py-32 max-w-5xl mx-auto z-10">
-    <h1 className="text-xl truncate text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
-      <WaveText text="Maximize Your International Reach" />
+    <h1 className="text-2xl truncate text-wrap sm:text-2xl lg:text-6xl font-bold tracking-tight [text-shadow:_0_2px_4px_black]">
+      <WaveText text="Maximize Your International" />
+      <WaveText text=" Reach" />
     </h1>
 
     {showButtons && (
