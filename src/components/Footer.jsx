@@ -45,7 +45,7 @@ const Footer = () => {
         {/* Social links */}
         <div className="flex justify-center items-center space-x-8 mt-8 md:mt-10">
           <Link 
-            href="https://x.com/UniViza" 
+            href="https://x.com/univiza" 
             target="_blank"
             className="text-gray-900 hover:text-indigo-600 transition-colors"
             aria-label="Twitter"
