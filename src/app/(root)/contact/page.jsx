@@ -10,6 +10,41 @@ import { Button } from "@/components/ui/button"
 import { Loader2 } from "lucide-react"
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer';
+import { CheckCircle, X } from "lucide-react"
+
+
+
+
+
+
+const Alert = ({ message, type, onClose }) => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(onClose, 500);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ x: 100, opacity: 0 }}
+      animate={{ x: isVisible ? 0 : 100, opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-4 right-4 p-4 rounded-lg shadow-lg flex items-center gap-2 z-50 ${
+        type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+      }`}
+    >
+      {type === 'success' ? <CheckCircle className="h-5 w-5" /> : <X className="h-5 w-5" />}
+      <span>{message}</span>
+      <button onClick={() => setIsVisible(false)} className="ml-4 text-gray-500 hover:text-gray-700">
+        <X className="h-4 w-4" />
+      </button>
+    </motion.div>
+  );
+};
 
 // Loading component
 const LoadingSpinner = () => (
@@ -28,7 +63,7 @@ const ContactForm = () => {
   const searchParams = useSearchParams();
   const [selectedOption, setSelectedOption] = useState('Student');
   const [isLoading, setIsLoading] = useState(true);
-  
+  const [alert, setAlert] = useState(null);
   useEffect(() => {
     const typeFromUrl = searchParams.get('type');
     if (typeFromUrl) {
@@ -54,6 +89,36 @@ const ContactForm = () => {
     transition: { duration: 0.4 }
   };
 
+  const submitHandler =async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        setAlert({
+          type: 'success',
+          message: 'Your message has been sent successfully!'
+        });
+        e.target.reset();
+      } else {
+        setAlert({
+          type: 'error',
+          message: 'Something went wrong. Please try again.'
+        });
+      }
+    } catch (error) {
+      setAlert({
+        type: 'error',
+        message: 'Failed to send message. Please check your connection.'
+      });
+    }
+  }
+
   if (isLoading) {
     return <LoadingSpinner />;
   }
@@ -65,6 +130,13 @@ const ContactForm = () => {
       transition={{ duration: 0.5 }}
       className="bg-gradient-to-b from-gray-50 to-white min-h-screen"
     >
+        {alert && (
+        <Alert
+          message={alert.message}
+          type={alert.type}
+          onClose={() => setAlert(null)}
+        />
+      )}
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 flex items-center justify-center">
@@ -93,19 +165,19 @@ const ContactForm = () => {
                 ))}
               </div>
 
-              <form className="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+              <form className="space-y-6" onSubmit={submitHandler} action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="be5f2b6b-2156-4b9f-84e6-33c0d450aa2b"/>
                 {/* Rest of your form code remains exactly the same */}
                 {selectedOption === 'Recruitment Partner' && (
                     <div className="space-y-2">
                       <Label htmlFor="company">Agency Name</Label>
-                      <Input id="company" placeholder="Agency name" name="Agency" />
+                      <Input id="company" placeholder="Agency name" name="Agency Name" />
                     </div>
                   )}
                     {selectedOption === 'Institution' && (
                     <div className="space-y-2">
                       <Label htmlFor="institution">Institution Name<span className='text-red-500'>*</span></Label>
-                      <Input id="institution" name="Institute" placeholder="Institution Name" />
+                      <Input id="institution" name="Institution" placeholder="Institution Name" />
                     </div>
                   )}
                 <motion.div {...fadeIn} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -115,7 +187,7 @@ const ContactForm = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name<span className='text-red-500'>*</span></Label>
-                    <Input id="name" name="fname" placeholder="John Doe" />
+                    <Input id="name" name="Full Name" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Phone<span className='text-red-500'>*</span></Label>
@@ -165,7 +237,7 @@ const ContactForm = () => {
                     id="message" 
                     placeholder="Your message here..." 
                     className="min-h-[150px]"
-                    name="address"
+                    name="Message"
                   />
                 </motion.div>
 
