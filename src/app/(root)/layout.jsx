@@ -2,7 +2,7 @@ import React from 'react'
 export const metadata = {
     title:"UniViza • Home",
     icons: {
-      icon: "/newLogo.png",
+      icon: "/favicon.png",
     },
   };
 const layout = ({children}) => {
