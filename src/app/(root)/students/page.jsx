@@ -151,7 +151,7 @@ const page = () => {
           <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
             <div className="h-20 w-20 mx-auto mb-6">
               <img
-                src="/insw1.png"
+                src="/sw1.png"
                 className="w-full h-full object-contain"
                 alt="High-Quality Student Applications"
               />
@@ -165,7 +165,7 @@ const page = () => {
           <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
             <div className="h-20 w-20 mx-auto mb-6">
               <img
-                src="/insw2.png"
+                src="/sw2.png"
                 className="w-full h-full object-contain"
                 alt="Personalized Marketing & Outreach"
               />
@@ -179,7 +179,7 @@ const page = () => {
           <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full mx-auto h-fit">
             <div className="h-20 w-20 mx-auto mb-6">
               <img
-                src="/insw3.png"
+                src="/sw3.png"
                 className="w-full h-full object-contain"
                 alt="Building Long Term Relationships"
               />
@@ -195,7 +195,7 @@ const page = () => {
             <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/insw4.png"
+                  src="/sw4.png"
                   className="w-full h-full object-contain"
                   alt="Document Verification"
                 />
@@ -209,7 +209,7 @@ const page = () => {
             <div className="bg-white rounded-2xl p-8 transform transition-transform duration-300 shadow-xl max-w-[350px] w-full h-fit">
               <div className="h-20 w-20 mx-auto mb-6">
                 <img
-                  src="/insw5.png"
+                  src="/sw5.png"
                   className="w-full h-full object-contain"
                   alt="Admission Ready Applications"
                 />
