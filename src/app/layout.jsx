@@ -13,15 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: {
-//     template:
-//       "UniViza • Home",
-//     default:
-//       "UniViza • Home",
-//   },
+export const metadata = {
   
-// };
+
+    icons: {
+     icon: "/favicon.png",
+    },
+};
 
 export default function RootLayout({ children }) {
   return (
